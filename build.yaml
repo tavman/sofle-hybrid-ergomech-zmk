@@ -21,13 +21,3 @@ include:
     shield: sofle_ergomech_right
   - board: nice_nano_v2
     shield: settings_reset
-      - name: Archive firmware
-        run: |
-          mkdir -p artifact
-          cp build/zephyr/zephyr.bin artifact/
-      - name: Upload firmware artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: firmware
-          path: artifact/*
-
