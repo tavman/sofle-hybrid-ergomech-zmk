@@ -10,89 +10,90 @@ on:
 permissions:
   contents: write
 
-build:
-  uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
-
-upload_bin:
-  needs: build
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout repository (with submodules)
-      uses: actions/checkout@v4
-      with:
-        submodules: true
-
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          python3-pip \
-          python3-dev \
-          gcc-arm-none-eabi \
-          dfu-util \
-          git \
-          unzip
-
-    - name: Install west
-      run: |
-        python3 -m pip install --user west
-        echo "${HOME}/.local/bin" >> $GITHUB_PATH   # make west available
-
-    - name: Initialise west workspace
-      run: |
-        west init -l config
-        west update
-
-    - name: Build firmware (produit zephyr.bin)
-      run: |
-        west build -p auto -b nice_nano_v2 sofle_hybrid_rgb_rev5
-
-    - name: Upload zephyr.bin as part of the firmware artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: firmware
-        path: build/zephyr/zephyr.bin
-
-create_release_master:
-  if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-  needs: [build, upload_bin]
-  runs-on: ubuntu-latest
-  steps:
-    - name: Download firmware artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: firmware
-
-    - name: Get current date
-      id: date
-      run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-
-    - name: Create Release with firmware
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
-        name: Firmware ${{ steps.date.outputs.date }} - master
-        body: Build from commit ${{ github.sha }}
-        files: '*.uf2, *.bin'
-
-create_release_rev5:
-  if: github.event_name == 'push' && github.ref == 'refs/heads/sofle_hybrid_rgb_rev5'
-  needs: [build, upload_bin]
-  runs-on: ubuntu-latest
-  steps:
-    - name: Download firmware artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: firmware
-
-    - name: Get current date
-      id: date
-      run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-
-    - name: Create Release with firmware
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
-        name: Firmware ${{ steps.date.outputs.date }} - rev5
-        body: Build from commit ${{ github.sha }}
-        files: '*.uf2, *.bin'
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+  
+  upload_bin:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+  
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            python3-pip \
+            python3-dev \
+            gcc-arm-none-eabi \
+            dfu-util \
+            git \
+            unzip
+  
+      - name: Install west
+        run: |
+          python3 -m pip install --user west
+          echo "${HOME}/.local/bin" >> $GITHUB_PATH   # make west available
+  
+      - name: Initialise west workspace
+        run: |
+          west init -l config
+          west update
+  
+      - name: Build firmware (produit zephyr.bin)
+        run: |
+          west build -p auto -b nice_nano_v2 sofle_hybrid_rgb_rev5
+  
+      - name: Upload zephyr.bin as part of the firmware artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware
+          path: build/zephyr/zephyr.bin
+  
+  create_release_master:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: [build, upload_bin]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download firmware artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware
+  
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+  
+      - name: Create Release with firmware
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
+          name: Firmware ${{ steps.date.outputs.date }} - master
+          body: Build from commit ${{ github.sha }}
+          files: '*.uf2, *.bin'
+  
+  create_release_rev5:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/sofle_hybrid_rgb_rev5'
+    needs: [build, upload_bin]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download firmware artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware
+  
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+  
+      - name: Create Release with firmware
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
+          name: Firmware ${{ steps.date.outputs.date }} - rev5
+          body: Build from commit ${{ github.sha }}
+          files: '*.uf2, *.bin'
