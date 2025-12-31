@@ -14,52 +14,32 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
   
-  upload_bin:
+  extract_bin:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository (with submodules)
-        uses: actions/checkout@v4
+      - name: Download firmware artifact from the build job
+        uses: actions/download-artifact@v4
         with:
-          submodules: true
+          name: firmware
   
-      - name: Install system dependencies
+      - name: Copy zephyr.bin to the root of the artifact
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            python3-pip \
-            python3-dev \
-            gcc-arm-none-eabi \
-            dfu-util \
-            git \
-            unzip
+          mkdir -p artifact
+          cp build/zephyr/zephyr.bin artifact/
   
-      - name: Install west
-        run: |
-          python3 -m pip install --user west
-          echo "${HOME}/.local/bin" >> $GITHUB_PATH   # make west available
-  
-      - name: Initialise west workspace
-        run: |
-          west init -l config
-          west update
-  
-      - name: Build firmware (produit zephyr.bin)
-        run: |
-          west build -p auto -b nice_nano_v2 shields/sofle_ergomech
-  
-      - name: Upload zephyr.bin as part of the firmware artifact
+      - name: Re‑upload artifact (now includes zephyr.bin)
         uses: actions/upload-artifact@v4
         with:
           name: firmware
-          path: build/zephyr/zephyr.bin
-  
+          path: artifact/*
+
   create_release_master:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-    needs: [build, upload_bin]
+    needs: extract_bin
     runs-on: ubuntu-latest
     steps:
-      - name: Download firmware artifacts
+      - name: Download final firmware artifact
         uses: actions/download-artifact@v4
         with:
           name: firmware
@@ -75,13 +55,13 @@ jobs:
           name: Firmware ${{ steps.date.outputs.date }} - master
           body: Build from commit ${{ github.sha }}
           files: '*.uf2, *.bin'
-  
+
   create_release_rev5:
     if: github.event_name == 'push' && github.ref == 'refs/heads/sofle_hybrid_rgb_rev5'
-    needs: [build, upload_bin]
+    needs: extract_bin
     runs-on: ubuntu-latest
     steps:
-      - name: Download firmware artifacts
+      - name: Download final firmware artifact
         uses: actions/download-artifact@v4
         with:
           name: firmware
