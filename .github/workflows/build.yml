@@ -46,7 +46,7 @@ jobs:
   
       - name: Build firmware (produit zephyr.bin)
         run: |
-          west build -p auto -b nice_nano_v2 boards/shields/sofle_ergomech
+          west build -p auto -b nice_nano_v2 shields/sofle_ergomech
   
       - name: Upload zephyr.bin as part of the firmware artifact
         uses: actions/upload-artifact@v4
