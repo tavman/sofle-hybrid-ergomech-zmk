@@ -52,12 +52,12 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // sh_oneshot: oneshot_shift {
-        //     compatible = "zmk,behavior-oneshot";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp LSHIFT>;
-        //     timeout-ms = <0>;
-        // };
+        sh_oneshot: oneshot_shift {
+            compatible = "zmk,behavior-oneshot";
+            #binding-cells = <0>;
+            bindings = <&kp LSHIFT>;
+            timeout-ms = <0>;
+        };
 
 		//	td_shift: tap_dance_shift {
 		//		compatible = "zmk,behavior-tap-dance";
