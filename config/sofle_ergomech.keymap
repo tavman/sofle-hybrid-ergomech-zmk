@@ -40,7 +40,7 @@
             tapping-term-ms = <200>;
         };
 
-        fn_tap_hold: fn-tap-hold {
+        fn_tap_hold: tap-hold {
             compatible = "zmk,behavior-tap-hold";
             #binding-cells = <0>;
             bindings = <&mo FUNCTION>;
@@ -54,7 +54,7 @@
             timeout-ms = <0>;
         };
 
-        fn_oneshot: fn-oneshot {
+        fn_oneshot: oneshot {
             compatible = "zmk,behavior-oneshot";
             #binding-cells = <0>;
             bindings = <&mo FUNCTION>;
@@ -67,7 +67,7 @@
             bindings = <&sh_tap_hold>, <&sh_oneshot>;
         };
 
-        fn_td: fn-tap-dance {
+        fn_td: tap-dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&fn_tap_hold>, <&fn_oneshot>;
