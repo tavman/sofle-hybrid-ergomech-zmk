@@ -33,47 +33,47 @@
         };
 
 
-    td_shift: tap_dance_shift {
-        compatible = "zmk,behavior-tap-dance";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&sh_tap_hold>,
-                   <&sh_oneshot>;
-    };
+		td_shift: tap_dance_shift {
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cells = <0>;
+			tapping-term-ms = <200>;
+			bindings = <&sh_tap_hold>,
+					   <&sh_oneshot>;
+		};
 
-    td_fn: tap_dance_fn {
-        compatible = "zmk,behavior-tap-dance";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&fn_tap_hold>,
-                   <&fn_oneshot>;
-    };
+		// td_fn: tap_dance_fn {
+		//     compatible = "zmk,behavior-tap-dance";
+		//     #binding-cells = <0>;
+		//     tapping-term-ms = <200>;
+		//     bindings = <&fn_tap_hold>,
+		//                <&fn_oneshot>;
+		// };
 
-    sh_tap_hold: tap-hold-shift {
-        compatible = "zmk,behavior-tap-hold";
-        #binding-cells = <0>;
-        bindings = <&kp LSHIFT>;
-        tapping-term-ms = <200>;
-    };
-    sh_oneshot: oneshot-shift {
-        compatible = "zmk,behavior-oneshot";
-        #binding-cells = <0>;
-        bindings = <&kp LSHIFT>;
-        timeout-ms = <0>;
-    };
+		sh_tap_hold: tap-hold-shift {
+			compatible = "zmk,behavior-tap-hold";
+			#binding-cells = <0>;
+			bindings = <&kp LSHIFT>;
+			tapping-term-ms = <200>;
+		};
+		sh_oneshot: oneshot-shift {
+			compatible = "zmk,behavior-oneshot";
+			#binding-cells = <0>;
+			bindings = <&kp LSHIFT>;
+			timeout-ms = <0>;
+		};
 
-    fn_tap_hold: tap-hold-fn {
-        compatible = "zmk,behavior-tap-hold";
-        #binding-cells = <0>;
-        bindings = <&mo FUNCTION>;
-        tapping-term-ms = <200>;
-    };
-    fn_oneshot: oneshot-fn {
-        compatible = "zmk,behavior-oneshot";
-        #binding-cells = <0>;
-        bindings = <&mo FUNCTION>;
-        timeout-ms = <0>;
-    };
+		// fn_tap_hold: tap-hold-fn {
+		//     compatible = "zmk,behavior-tap-hold";
+		//     #binding-cells = <0>;
+		//     bindings = <&mo FUNCTION>;
+		//     tapping-term-ms = <200>;
+		// };
+		// fn_oneshot: oneshot-fn {
+		//     compatible = "zmk,behavior-oneshot";
+		//     #binding-cells = <0>;
+		//     bindings = <&mo FUNCTION>;
+		//     timeout-ms = <0>;
+		// };
      
     };
 
