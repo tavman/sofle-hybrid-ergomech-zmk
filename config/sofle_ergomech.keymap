@@ -50,29 +50,44 @@
 
 
 		// SHIFT
-        // Caps Word (tu peux utiliser directement &caps_word si tu veux la version par défaut)
+        // Caps Word (optionnel : tu peux aussi utiliser &caps_word directement)
         my_caps_word: caps_word {
             compatible = "zmk,behavior-caps-word";
             label = "MY_CAPS_WORD";
             #binding-cells = <0>;
-            // laisse vide pour le comportement par défaut
         };
 
-        // Hold-tap : hold = Shift, tap = NOOP (rien)
-        ht_shift_only: hold_tap {
+        // Hold-tap générique de type "mod-tap"
+        // On ne met PAS de keycodes ici, juste le comportement &kp.
+        mt_impl: mod_tap_by_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_SHIFT_ONLY";
-            #binding-cells = <0>;
+            label = "MOD_TAP_BY_HOLD_TAP";
+            #binding-cells = <2>;
 
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
             hold-trigger-on-release;
 
-            // hold -> Shift, tap -> aucune touche
-            bindings = <&kp LSHIFT>, <&none>;
+            // 1er = comportement en hold, 2e = comportement en tap
+            bindings = <&kp>, <&kp>;
         };
 
-        // Tap-dance : 1 tap = hold-tap Shift, 2 taps = Caps Word
+        // Hold-tap : hold = Shift, tap = "no-op" (on va lui donner un keycode neutre)
+        // Ici on garde un wrapper pour la lisibilité.
+        ht_shift_noop: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SHIFT_NOOP";
+            #binding-cells = <2>;
+
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            hold-trigger-on-release;
+
+            // Les deux pointeurs sont &kp, les keycodes viendront dans la keymap.
+            bindings = <&kp>, <&kp>;
+        };
+
+        // Tap-dance : 1 tap = hold-tap Shift/no-op, 2 taps = Caps Word
         td_shift_capsword: tap_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SHIFT_CAPSWORD";
@@ -80,9 +95,9 @@
 
             tapping-term-ms = <200>;
 
-            // 1 tap -> comportement hold-tap (Shift en maintien)
-            // 2 taps -> Caps Word (shift “verrouillé” sur les lettres)
-            bindings = <&ht_shift_only>, <&my_caps_word>;
+            // 1 tap -> invoke le hold-tap
+            // 2 taps -> Caps Word
+            bindings = <&ht_shift_noop>, <&my_caps_word>;
         };
 
 
