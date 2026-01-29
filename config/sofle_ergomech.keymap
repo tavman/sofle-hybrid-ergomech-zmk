@@ -44,6 +44,13 @@
 
 
 
+		test_tapdance: tap_dance_test {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&sh_oneshot>;
+		};
+		
         sh_holdtap: hold_tap_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -59,13 +66,6 @@
             timeout-ms = <0>;
         };
 
-		test_tapdance: tap_dance_test {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
-		};
-		
 		//	sh_tapdance: tap_dance_shift {
 		//		compatible = "zmk,behavior-tap-dance";
 		//		#binding-cells = <0>;
