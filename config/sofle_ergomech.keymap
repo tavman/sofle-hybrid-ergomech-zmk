@@ -41,27 +41,33 @@
 
 
 		// SHIFT
-		sh_tap_hold: tap-hold-shift {
-			compatible = "zmk,behavior-tap-hold";
-			#binding-cells = <0>;
-			bindings = <&kp LSHFT>;
-			tapping-term-ms = <200>;
-		};
-		
-		sh_oneshot: oneshot-shift {
-			compatible = "zmk,behavior-oneshot";
-			#binding-cells = <0>;
-			bindings = <&kp LSHFT>;
-			timeout-ms = <0>;
-		};
-
-		td_shift: tap_dance_shift {
+        // Tap-dance : double tap -> Caps Word (ou Caps Lock)
+        td_shift_caps: tap_dance_shift_caps {
             compatible = "zmk,behavior-tap-dance";
+            label = "TD_SHIFT_CAPS";
+            #binding-cells = <0>;
+
+            // binding 0 : simple tap (ici rien, mais tu peux mettre &kp SPACE ou autre)
+            // binding 1 : double tap (ici Caps Word)
+            bindings = <&none>, <&caps_word>;
+
+            // timings à ajuster
+            tapping-term-ms = <200>;
+        };
+
+        // Hold-Tap / Mod-Tap : hold = Shift, tap = tap-dance
+        mt_shift_td: mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_SHIFT_TD";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp sh_tap_hold>, <&kp sh_oneshot>;
-		};
-		
+            flavor = "hold-preferred";
+
+            // hold = Shift
+            hold-trigger-on-release;
+            bindings = <&kp LSHIFT>, <&td_shift_caps>;
+        };
+
 		
 		
 		
