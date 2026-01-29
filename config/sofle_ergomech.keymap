@@ -33,41 +33,41 @@
         };
 
 
-        sh_tap_hold: tap-hold {
-            compatible = "zmk,behavior-tap-hold";
+        sh_tap_hold: sh_tap_hold {
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             bindings = <&kp LSHIFT>;
             tapping-term-ms = <200>;
         };
 
-        fn_tap_hold: tap-hold {
-            compatible = "zmk,behavior-tap-hold";
+        fn_tap_hold: fn_tap_hold {
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             bindings = <&mo FUNCTION>;
             tapping-term-ms = <200>;
         };
 
-        sh_oneshot: oneshot {
+        sh_oneshot: sh_oneshot {
             compatible = "zmk,behavior-oneshot";
             #binding-cells = <0>;
             bindings = <&kp LSHIFT>;
             timeout-ms = <0>;
         };
 
-        fn_oneshot: oneshot {
+        fn_oneshot: fn_oneshot {
             compatible = "zmk,behavior-oneshot";
             #binding-cells = <0>;
             bindings = <&mo FUNCTION>;
             timeout-ms = <0>;
         };
 
-        sh_td: tap-dance {
+        sh_td: sh_td {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&sh_tap_hold>, <&sh_oneshot>;
         };
 
-        fn_td: tap-dance {
+        fn_td: fn_td {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&fn_tap_hold>, <&fn_oneshot>;
