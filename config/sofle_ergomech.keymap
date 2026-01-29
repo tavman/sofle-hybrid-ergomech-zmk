@@ -44,14 +44,14 @@
 		sh_tap_hold: tap-hold-shift {
 			compatible = "zmk,behavior-tap-hold";
 			#binding-cells = <0>;
-			bindings = <&kp LSHIFT>;
+			bindings = <&kp LSHFT>;
 			tapping-term-ms = <200>;
 		};
 		
 		sh_oneshot: oneshot-shift {
 			compatible = "zmk,behavior-oneshot";
 			#binding-cells = <0>;
-			bindings = <&kp LSHIFT>;
+			bindings = <&kp LSHFT>;
 			timeout-ms = <0>;
 		};
 
@@ -59,7 +59,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&tap-hold-shift>, <&oneshot-shift>;
+            bindings = <&kp LSHFT>, <&kp LSHFT>;
 		};
 		
 		
