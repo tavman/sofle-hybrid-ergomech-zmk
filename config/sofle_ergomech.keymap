@@ -51,13 +51,13 @@
 
 		// SHIFT
         // Caps Word (on garde une instance dédiée)
-        my_caps_word: caps_word {
+        my_caps_word: my_caps_word {
             compatible = "zmk,behavior-caps-word";
             #binding-cells = <0>;
         };
 
         // Hold-tap fixe : hold = LSHIFT, tap = NOP
-        ht_shift_only: hold_tap {
+        ht_shift_only: my_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
 
@@ -71,7 +71,7 @@
         };
 
         // Tap-dance : 1 tap = ht_shift_only, 2 taps = Caps Word
-        td_shift_capsword: tap_dance {
+        td_shift_capsword: my_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
 
