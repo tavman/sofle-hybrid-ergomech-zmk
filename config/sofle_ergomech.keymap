@@ -40,17 +40,10 @@
             tapping-term-ms = <200>;
         };
 
-        sh_oneshot: sh_oneshot {
-            compatible = "zmk,behavior-oneshot";
-            #binding-cells = <0>;
-            bindings = <&kp LSFT>;
-            timeout-ms = <0>;
-        };
-
         sh_td: sh_td {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&sh_tap_hold>, <&sh_oneshot>;
+            bindings = <&kp LSFT>, <&sh_tap_hold>;
         };
 
         fn_tap_hold: fn_tap_hold {
