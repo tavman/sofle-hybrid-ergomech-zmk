@@ -57,14 +57,14 @@
         fn_tap_hold: function-tap-hold {
 			compatible = "zmk,behavior-tap-hold";
 			#binding-cells = <0>;
-            bindings = <&mo function_layer>;
+            bindings = <&mo FUNCTION>;
             tapping-term-ms = <200>;
         };
 
         fn_oneshot: function-press {
 			compatible = "zmk,behavior-tap-hold";
 			#binding-cells = <0>;
-            bindings = <&mo function_layer>;
+            bindings = <&mo FUNCTION>;
             timeout-ms = <0>;
         };
 
