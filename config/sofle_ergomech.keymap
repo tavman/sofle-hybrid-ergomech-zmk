@@ -59,13 +59,13 @@
             timeout-ms = <0>;
         };
 
-		td_shift: tap_dance_shift {
-			compatible = "zmk,behavior-tap-dance";
-			#binding-cells = <0>;
-			tapping-term-ms = <200>;
-			bindings = <&sh_tap_hold LSHFT 0>,
-					   <&sh_oneshot>;
-		};
+		//	td_shift: tap_dance_shift {
+		//		compatible = "zmk,behavior-tap-dance";
+		//		#binding-cells = <0>;
+		//		tapping-term-ms = <200>;
+		//		bindings = <&sh_tap_hold LSHFT 0>,
+		//				   <&sh_oneshot>;
+		//	};
 
 
 
