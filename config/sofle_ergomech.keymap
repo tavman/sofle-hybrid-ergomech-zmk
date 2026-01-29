@@ -50,33 +50,35 @@
 
 
 		// SHIFT
-        // Caps Word
+        // Caps Word (on garde une instance dédiée)
         my_caps_word: caps_word {
             compatible = "zmk,behavior-caps-word";
             #binding-cells = <0>;
         };
 
-        // Hold-tap : hold = LSHIFT, tap = NOP
+        // Hold-tap fixe : hold = LSHIFT, tap = NOP
         ht_shift_only: hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
 
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
             hold-trigger-on-release;
 
-            // 1er comportement (hold) et 2e (tap) sont tous deux &kp
-            // les keycodes sont passés comme arguments depuis la keymap
-            bindings = <&kp>, <&kp>;
+            // IMPORTANT : ici on met deux phandles, pas des keycodes bruts
+            // &kp et &none sont des comportements déjà déclarés par ZMK
+            bindings = <&kp &none>;
         };
 
-        // Tap-dance : 1 tap = ht_shift_only, 2 taps = my_caps_word
+        // Tap-dance : 1 tap = ht_shift_only, 2 taps = Caps Word
         td_shift_capsword: tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
 
             tapping-term-ms = <200>;
-            bindings = <&ht_shift_only>, <&my_caps_word>;
+
+            // Deux phandles, un par "nombre de taps"
+            bindings = <&ht_shift_only &my_caps_word>;
         };
 
 
@@ -146,7 +148,7 @@
             bindings = <
 &kp GRAVE   &kp N1  &kp N2        &kp N3    &kp N4    &kp N5                         &kp N6   &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
 &kp TAB     &kp Q   &kp W         &kp E     &kp R     &kp T                          &kp Y    &kp U     &kp I      &kp O    &kp P     &kp RBKT
-&ht_shift_only LSHIFT NOP  &kp A   &kp S         &kp D     &kp F     &kp G                          &kp H    &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&td_shift_capsword  &kp A   &kp S         &kp D     &kp F     &kp G                          &kp H    &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LCTRL   &kp Z   &kp X         &kp C     &kp V     &kp B                          &kp N    &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp LBKT
 &kp C_MUTE          &mo FUNCTION  &kp LGUI  &kp LALT  &kp SPACE  &kp ESC  &kp BSPC   &mo RET  &kp RALT  &kp HOME   &kp END
 
