@@ -59,7 +59,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <sh_oneshot>, <sh_tap_hold>;
+            bindings = <&tap-hold-shift>, <&oneshot-shift>;
 		};
 		
 		
