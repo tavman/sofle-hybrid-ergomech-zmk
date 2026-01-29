@@ -49,7 +49,7 @@
 
             // binding 0 : simple tap (ici rien, mais tu peux mettre &kp SPACE ou autre)
             // binding 1 : double tap (ici Caps Word)
-            bindings = <&none>, <&caps_word>;
+            bindings = <&none>, <&kp LSHIFT>;
 
             // timings à ajuster
             tapping-term-ms = <200>;
