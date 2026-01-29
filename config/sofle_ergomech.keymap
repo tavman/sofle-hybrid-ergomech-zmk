@@ -59,6 +59,9 @@
             bindings = <&kp LSHFT>;
             timeout-ms = <0>;
         };
+	};
+	
+	behaviors {
 		
 		test_tapdance: tap_dance_test {
             compatible = "zmk,behavior-tap-dance";
