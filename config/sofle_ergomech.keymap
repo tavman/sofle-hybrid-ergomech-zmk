@@ -23,6 +23,7 @@
 / {
     // Activate ADJUST layer by pressing raise and lower
 
+
 	behaviors {
         mousescroll: mousescroll {
             compatible = "zmk,behavior-sensor-rotate";
