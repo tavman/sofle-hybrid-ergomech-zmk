@@ -47,16 +47,15 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
-			flavor = "balanced";
 			tapping-term-ms = <200>;
-			bindings = <&kp LSHIFT>, <&none>;
+			bindings = <&kp LSHFT>, <&none>;
         };
 
         sh_oneshot: sh_oneshot {
 			compatible = "zmk,behavior-oneshot";
 			#binding-cells = <0>;
-			bindings = <&kp LSHIFT>;
-			timeout-ms = 0;                /* reste actif jusqu’au prochain tap */
+			bindings = <&kp LSHFT>;
+			timeout-ms = 0;
         };
 		
 		test_tapdance: test_tapdance {
