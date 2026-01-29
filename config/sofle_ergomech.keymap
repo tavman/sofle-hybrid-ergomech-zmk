@@ -33,10 +33,13 @@
         };
 		
         td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+            bindings = <&kp A>, <&kp B>;
+            display-name = "Mod-Tap";
+
         };
 
 
