@@ -36,8 +36,21 @@
         sh_tap_hold: sh_tap_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
-            bindings = <&kp LSHIFT>;
+            bindings = <&kp LSFT>;
             tapping-term-ms = <200>;
+        };
+
+        sh_oneshot: sh_oneshot {
+            compatible = "zmk,behavior-oneshot";
+            #binding-cells = <0>;
+            bindings = <&kp LSFT>;
+            timeout-ms = <0>;
+        };
+
+        sh_td: sh_td {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&sh_tap_hold>, <&sh_oneshot>;
         };
 
         fn_tap_hold: fn_tap_hold {
@@ -47,24 +60,11 @@
             tapping-term-ms = <200>;
         };
 
-        sh_oneshot: sh_oneshot {
-            compatible = "zmk,behavior-oneshot";
-            #binding-cells = <0>;
-            bindings = <&kp LSHIFT>;
-            timeout-ms = <0>;
-        };
-
         fn_oneshot: fn_oneshot {
             compatible = "zmk,behavior-oneshot";
             #binding-cells = <0>;
             bindings = <&mo FUNCTION>;
             timeout-ms = <0>;
-        };
-
-        sh_td: sh_td {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&sh_tap_hold>, <&sh_oneshot>;
         };
 
         fn_td: fn_td {
