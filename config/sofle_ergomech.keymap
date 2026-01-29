@@ -43,7 +43,7 @@
         fn_tap_hold: fn-tap-hold {
             compatible = "zmk,behavior-tap-hold";
             #binding-cells = <0>;
-            bindings = <&mo function_layer>;
+            bindings = <&mo FUNCTION>;
             tapping-term-ms = <200>;
         };
 
@@ -57,7 +57,7 @@
         fn_oneshot: fn-oneshot {
             compatible = "zmk,behavior-oneshot";
             #binding-cells = <0>;
-            bindings = <&mo function_layer>;
+            bindings = <&mo FUNCTION>;
             timeout-ms = <0>;
         };
 
