@@ -31,34 +31,46 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 			tap-ms = <20>;
         };
-		
-		
+
+
 		sh_tap_hold: tap-hold {
+			compatible = "zmk,behavior-tap-hold";
+			#binding-cells = <0>;
             bindings = <&kp LSHFT>;
             tapping-term-ms = 200;
         };
 
         sh_oneshot: oneshot {
+			compatible = "zmk,behavior-tap-hold";
+			#binding-cells = <0>;
             bindings = <&kp LSHFT>;
             timeout-ms = 0;
         };
 
         sh_td: tap-dance {
+			compatible = "zmk,behavior-tap-hold";
+			#binding-cells = <0>;
             bindings = <&sh_tap_hold>, <&sh_oneshot>;
         };
 
 
         fn_tap_hold: tap-hold {
+			compatible = "zmk,behavior-tap-hold";
+			#binding-cells = <0>;
             bindings = <&mo function_layer>;
             tapping-term-ms = 200;
         };
 
         fn_oneshot: oneshot {
+			compatible = "zmk,behavior-tap-hold";
+			#binding-cells = <0>;
             bindings = <&mo function_layer>;
             timeout-ms = 0;
         };
 
         fn_td: tap-dance {
+			compatible = "zmk,behavior-tap-hold";
+			#binding-cells = <0>;
             bindings = <&fn_tap_hold>, <&fn_oneshot>;
         };
     };
