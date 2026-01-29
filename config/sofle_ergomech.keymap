@@ -117,7 +117,7 @@
 &studio_unlock  &none        &none        &none       &none        &none                             &kp C_MUTE    &kp PRCNT  &kp N7  &kp N8  &kp N9   &kp EQUAL
 &studio_unlock  &none        &none        &none       &none        &none                             &kp C_VOL_UP  &kp ASTRK  &kp N4  &kp N5  &kp N6   &kp PLUS
 &studio_unlock  &none        &kp K_CUT    &kp K_COPY  &kp K_PASTE  &none                             &kp C_VOL_DN  &kp SLASH  &kp N1  &kp N2  &kp N3   &kp MINUS
-&kp C_MUTE                   &mo DEFAULT  &LGUI       &kp LALT     &kp SPACE    &kp ESC    &kp BSPC  &mo RET       &kp RALT   &kp N0  &kp END
+&kp C_MUTE                   &mo DEFAULT  &kp LGUI    &kp LALT     &kp SPACE    &kp ESC    &kp BSPC  &kp RET       &kp RALT   &kp N0  &kp END
 
 &kp A      &kp B     &kp C      &kp D      &kp E
             >;
