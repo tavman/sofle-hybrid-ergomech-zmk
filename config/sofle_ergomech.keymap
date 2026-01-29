@@ -53,17 +53,10 @@
             tapping-term-ms = <200>;
         };
 
-        fn_oneshot: fn_oneshot {
-            compatible = "zmk,behavior-oneshot";
-            #binding-cells = <0>;
-            bindings = <&mo FUNCTION>;
-            timeout-ms = <0>;
-        };
-
         fn_td: fn_td {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&fn_tap_hold>, <&fn_oneshot>;
+            bindings = <&mo FUNCTION>, <&fn_tap_hold>;
         };
      
     };
