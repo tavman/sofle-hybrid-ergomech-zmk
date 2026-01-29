@@ -84,7 +84,7 @@
             hold-trigger-on-release;
 
             // hold -> Shift, tap -> comportement mod-morph
-            bindings = <&kp LSHIFT>, <&mm_a_ctrl>;
+            bindings = <&LSHIFT>, <&mm_a_ctrl>;
         };
 
         // 4) Tap-dance : simple tap = MT (Shift/a/@), double-tap = Caps Word
