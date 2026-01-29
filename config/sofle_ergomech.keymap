@@ -33,7 +33,7 @@
         };
 
 
-        sh_tap_hold: sh-tap-hold {
+        sh_tap_hold: tap-hold {
             compatible = "zmk,behavior-tap-hold";
             #binding-cells = <0>;
             bindings = <&kp LSHIFT>;
@@ -47,7 +47,7 @@
             tapping-term-ms = <200>;
         };
 
-        sh_oneshot: sh-oneshot {
+        sh_oneshot: oneshot {
             compatible = "zmk,behavior-oneshot";
             #binding-cells = <0>;
             bindings = <&kp LSHIFT>;
@@ -61,7 +61,7 @@
             timeout-ms = <0>;
         };
 
-        sh_td: sh-tap-dance {
+        sh_td: tap-dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&sh_tap_hold>, <&sh_oneshot>;
