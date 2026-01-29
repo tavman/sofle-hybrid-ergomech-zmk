@@ -66,7 +66,7 @@
             hold-trigger-on-release;
 
             // IMPORTANT : un seul tableau < ... >, pas de virgule entre deux tableaux
-            bindings = <&kp LSHIFT &kp NOP>;
+            bindings = <&kp LSHIFT &none>;
         };
 
         // Tap-dance : 1 tap = ht_shift_only, 2 taps = caps_word
