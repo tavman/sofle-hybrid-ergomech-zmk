@@ -40,47 +40,66 @@
         };
 
 
+
+
+
+
+
+
+
+
+
 		// SHIFT
-        // Instance optionnelle de Caps Word si tu veux customiser
+        // 1) Caps Word (instance custom, optionnelle)
         my_caps_word: caps_word {
             compatible = "zmk,behavior-caps-word";
             label = "MY_CAPS_WORD";
             #binding-cells = <0>;
 
-            // Optionnel : seulement UNDERSCORE et MINUS ne cassent pas le caps
-            // Si tu veux le comportement par défaut, supprime simplement cette ligne.
+            // Exemple : autoriser underscore et minus dans le mot
             // continue-list = <UNDERSCORE MINUS>;
         };
 
-        // Tap-dance : double tap -> Caps Word (ici on utilise directement &caps_word,
-        // mais tu peux mettre &my_caps_word si tu veux ta version custom).
-        td_shift_caps: tap_dance_shift_caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_SHIFT_CAPS";
+        // 2) Mod-morph : si Ctrl est enfoncé -> @, sinon a
+        mm_a_ctrl: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_A_CTRL";
             #binding-cells = <0>;
 
-            // binding 0 : simple tap (aucune action)
-            // binding 1 : double tap (Caps Word)
-            bindings = <&none>, <&caps_word>;
+            // Si LCTRL ou RCTRL est enfoncé, on invoque le deuxième binding
+            mods = <(MOD_LCTL|MOD_RCTL)>;
 
-            // À ajuster selon ta frappe
-            tapping-term-ms = <200>;
+            // default = a, avec Ctrl = @ (par exemple AltGr+2, à adapter à ton layout)
+            bindings = <&kp A>, <&kp AT>;
         };
 
-        // Hold-Tap / Mod-Tap : hold = Shift, tap = tap-dance
-        mt_shift_td: mod_tap {
+        // 3) Hold-tap / Mod-tap : hold = Shift, tap = mod-morph ci-dessus
+        mt_shift_mm_a: hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT_SHIFT_TD";
+            label = "MT_SHIFT_MM_A";
             #binding-cells = <0>;
 
-            // Durée pour distinguer tap vs hold
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
             hold-trigger-on-release;
 
-            // hold = Shift, tap = tap-dance (double-tap -> Caps Word)
-            bindings = <&kp LSHIFT>, <&td_shift_caps>;
+            // hold -> Shift, tap -> comportement mod-morph
+            bindings = <&kp LSHIFT>, <&mm_a_ctrl>;
         };
+
+        // 4) Tap-dance : simple tap = MT (Shift/a/@), double-tap = Caps Word
+        td_a_shift_caps: tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_A_SHIFT_CAPS";
+            #binding-cells = <0>;
+
+            tapping-term-ms = <200>;
+
+            // 1 tap : la behavior hold-tap ci-dessus
+            // 2 taps : Caps Word
+            bindings = <&mt_shift_mm_a>, <&my_caps_word>;
+        };
+
 
 
 
