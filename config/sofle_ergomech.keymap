@@ -55,7 +55,7 @@
 			compatible = "zmk,behavior-oneshot";
 			#binding-cells = <0>;
 			bindings = <&kp LSHFT>;
-			timeout-ms = 0;
+			timeout-ms = <0>;
         };
 		
 		test_tapdance: test_tapdance {
