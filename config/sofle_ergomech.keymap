@@ -50,56 +50,35 @@
 
 
 		// SHIFT
-        // Caps Word (optionnel : tu peux aussi utiliser &caps_word directement)
-        my_caps_word: caps_word {
+        // Caps Word : on utilise l'implémentation fournie par ZMK
+        caps_word: caps_word {
             compatible = "zmk,behavior-caps-word";
-            label = "MY_CAPS_WORD";
             #binding-cells = <0>;
         };
 
-        // Hold-tap générique de type "mod-tap"
-        // On ne met PAS de keycodes ici, juste le comportement &kp.
-        mt_impl: mod_tap_by_hold_tap {
+        // Hold-tap fixe : hold = LSHIFT, tap = NOP (no-op)
+        ht_shift_only: hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "MOD_TAP_BY_HOLD_TAP";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
 
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
             hold-trigger-on-release;
 
-            // 1er = comportement en hold, 2e = comportement en tap
-            bindings = <&kp>, <&kp>;
+            // IMPORTANT : un seul tableau < ... >, pas de virgule entre deux tableaux
+            bindings = <&kp LSHIFT &kp NOP>;
         };
 
-        // Hold-tap : hold = Shift, tap = "no-op" (on va lui donner un keycode neutre)
-        // Ici on garde un wrapper pour la lisibilité.
-        ht_shift_noop: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_SHIFT_NOOP";
-            #binding-cells = <2>;
-
-            tapping-term-ms = <200>;
-            flavor = "hold-preferred";
-            hold-trigger-on-release;
-
-            // Les deux pointeurs sont &kp, les keycodes viendront dans la keymap.
-            bindings = <&kp>, <&kp>;
-        };
-
-        // Tap-dance : 1 tap = hold-tap Shift/no-op, 2 taps = Caps Word
+        // Tap-dance : 1 tap = ht_shift_only, 2 taps = caps_word
         td_shift_capsword: tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_SHIFT_CAPSWORD";
             #binding-cells = <0>;
 
             tapping-term-ms = <200>;
 
-            // 1 tap -> invoke le hold-tap
-            // 2 taps -> Caps Word
-            bindings = <&ht_shift_noop>, <&my_caps_word>;
+            // IMPORTANT : pareil, un seul tableau < ... >
+            bindings = <&ht_shift_only &caps_word>;
         };
-
 
 
 		
