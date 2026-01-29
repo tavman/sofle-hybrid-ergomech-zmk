@@ -59,15 +59,12 @@
             bindings = <&kp LSHFT>;
             timeout-ms = <0>;
         };
-	};
-	
-	behaviors {
 		
 		test_tapdance: tap_dance_test {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+            bindings = <&kp N1>, <&kp N2>, &sh_oneshot;
 		};
 
 		//	sh_tapdance: tap_dance_shift {
