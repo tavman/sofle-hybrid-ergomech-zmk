@@ -49,26 +49,26 @@
                    <&fn_oneshot>;
     };
 
-    sh_tap_hold: tap-hold {
+    sh_tap_hold: tap-hold-shift {
         compatible = "zmk,behavior-tap-hold";
         #binding-cells = <0>;
         bindings = <&kp LSHIFT>;
         tapping-term-ms = <200>;
     };
-    sh_oneshot: oneshot {
+    sh_oneshot: oneshot-shift {
         compatible = "zmk,behavior-oneshot";
         #binding-cells = <0>;
         bindings = <&kp LSHIFT>;
         timeout-ms = <0>;
     };
 
-    fn_tap_hold: tap-hold {
+    fn_tap_hold: tap-hold-fn {
         compatible = "zmk,behavior-tap-hold";
         #binding-cells = <0>;
         bindings = <&mo FUNCTION>;
         tapping-term-ms = <200>;
     };
-    fn_oneshot: oneshot {
+    fn_oneshot: oneshot-fn {
         compatible = "zmk,behavior-oneshot";
         #binding-cells = <0>;
         bindings = <&mo FUNCTION>;
