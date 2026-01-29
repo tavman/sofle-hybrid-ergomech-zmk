@@ -55,7 +55,7 @@
         sh_oneshot: oneshot_shift {
             compatible = "zmk,behavior-oneshot";
             #binding-cells = <0>;
-            bindings = <&kp LSHIFT>;
+            bindings = <&kp LSHFT>;
             timeout-ms = <0>;
         };
 
@@ -63,7 +63,7 @@
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
 			tapping-term-ms = <200>;
-			bindings = <&sh_tap_hold LSHIFT 0>,
+			bindings = <&sh_tap_hold LSHFT 0>,
 					   <&sh_oneshot>;
 		};
 
