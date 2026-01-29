@@ -50,7 +50,7 @@
         fn_td: fn_tapdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&fn_th>, <&fn_os>;
+            bindings = <&fn_tap_hold>, <&fn_oneshot>;
         };
      
     };
