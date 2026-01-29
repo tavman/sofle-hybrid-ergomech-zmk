@@ -46,27 +46,27 @@
 
 
         sh_holdtap: sh_holdtap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp LSHIFT>, <&kp LCTRL>;
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;          /* deux arguments obligatoires */
+			flavor = "balanced";
+			tapping-term-ms = <200>;
+
+			/* hold → LSHIFT, tap → NO (rien) */
+			bindings = <&kp LSHIFT>, <&none>;
         };
 
         sh_oneshot: sh_oneshot {
-            compatible = "zmk,behavior-oneshot";
-            #binding-cells = <0>;
-            bindings = <&kp LSHFT>;
-            timeout-ms = <0>;
+			compatible = "zmk,behavior-oneshot";
+			#binding-cells = <0>;
+			bindings = <&kp LSHIFT>;
+			timeout-ms = 0;                /* reste actif jusqu’au prochain tap */
         };
-	};
-	
-	behaviors {
+		
 		test_tapdance: test_tapdance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cells = <0>;
+			tapping-term-ms = <200>;
+			bindings = <&kp N1>, <&kp N2>, <&kp N3>;
 		};
 
 		//	sh_tapdance: tap_dance_shift {
