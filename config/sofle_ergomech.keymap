@@ -39,6 +39,8 @@
             bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
         };
 
+
+		// SHIFT
 		sh_tap_hold: tap-hold-shift {
 			compatible = "zmk,behavior-tap-hold";
 			#binding-cells = <0>;
@@ -57,7 +59,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sh_oneshot>, <&sh_tap_hold>;
+            bindings = <sh_oneshot>, <sh_tap_hold>;
 		};
 		
 		
