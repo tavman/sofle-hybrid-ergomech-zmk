@@ -64,13 +64,13 @@
         sh_td: sh-tap-dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&sh-tap-hold>, <&sh-oneshot>;
+            bindings = <&sh_tap_hold>, <&sh_oneshot>;
         };
 
         fn_td: fn-tap-dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&fn-tap-hold>, <&fn-oneshot>;
+            bindings = <&fn_tap_hold>, <&fn_oneshot>;
         };
      
     };
