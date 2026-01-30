@@ -64,7 +64,7 @@
             >;
 
             // sensor-bindings = <&mousescroll &inc_dec_kp PG_UP PG_DN>;
-            sensor-bindings = <&msc &inc_dec_kp SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&msc SCRL_UP SCRL_DOWN>;
         };
 
         function_layer {
