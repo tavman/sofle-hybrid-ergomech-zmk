@@ -111,10 +111,12 @@
 &trans &trans &trans &trans &trans
             >;
 
-            sensor-bindings = <&trans &trans>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         azerty_layer {
+            label = "AZERTY";
+			
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -122,18 +124,22 @@
             // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
-            label = "AZERTY";
             bindings = <
-&trans  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &none  &none  &none  &none  &none  &none
-&trans  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &none  &none  &none  &none  &none  &none
-&trans  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &none  &none  &none  &none  &none  &none
-&trans  &none            &none            &none            &none            &none            &none  &none  &none  &none  &none  &none
-&trans  &none            &none            &none            &none            &none            &none  &none  &none  &none  &none
-                                                                                                        &kp A  &kp B  &kp C  &kp D  &kp E
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         azertymaj_layer {
+            label = "AZERTY MAJ";
+			
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -141,15 +147,86 @@
             // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
-            label = "AZERTY";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &none  &none  &none  &none  &none  &none
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &none  &none  &none  &none  &none  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &none  &none  &none  &none  &none  &none
-&none              &none            &none            &none            &none            &none            &none  &none  &none  &none  &none  &none
-&rgb_ug RGB_TOG    &none            &none            &none            &none            &none            &none  &none  &none  &none  &none
-                                                                                                        &kp A  &kp B  &kp C  &kp D  &kp E
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        standby1_layer {
+            label = "L1";
+			
+            // ----------------------------------------------------------------------------------------------------------------------------
+            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
+            // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
+            // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
+            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
+            //                    |         |         |         |         |         | |      |      |      |       |      |
+
+            bindings = <
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        standby2_layer {
+            label = "L2";
+			
+            // ----------------------------------------------------------------------------------------------------------------------------
+            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
+            // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
+            // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
+            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
+            //                    |         |         |         |         |         | |      |      |      |       |      |
+
+            bindings = <
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        standby3_layer {
+            label = "L3";
+			
+            // ----------------------------------------------------------------------------------------------------------------------------
+            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
+            // | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
+            // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
+            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
+            //                    |         |         |         |         |         | |      |      |      |       |      |
+
+            bindings = <
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
+&trans        &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
