@@ -41,28 +41,13 @@
 
 
 
-        sh_holdtap: sh_holdtap {
+        holdtap: sh_holdtap {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
 			tapping-term-ms = <200>;
-			bindings = <&kp N1>, <&kp N2>;
+			bindings = <&kt>, <&kp>;
         };
-
-        sh_oneshot: sh_oneshot {
-			compatible = "zmk,behavior-oneshot";
-			#binding-cells = <0>;
-			bindings = <&kp LSHFT>;
-			timeout-ms = <0>;
-        };
-		
-		test_tapdance: test_tapdance {
-			compatible = "zmk,behavior-tap-dance";
-			#binding-cells = <0>;
-			tapping-term-ms = <200>;
-			bindings = <&kp N1>, <&kp N2>;
-		};
-
 
 
 
@@ -159,11 +144,11 @@
             // | CTRL | à | y    | x   | .   | k     |     ||||       | '     | q     | g    | h   | f | z |
             //            | <FN> | WIN | ALT | SPACE | ESC |||| BKSPC | ENTER | ALTGR | HOME | END |
             bindings = <
-&kp GRAVE   &kp N1  &kp N2        &kp N3    &kp N4    &kp N5                         &kp N6   &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB     &kp Q   &kp W         &kp E     &kp R     &kp T                          &kp Y    &kp U     &kp I      &kp O    &kp P     &kp RBKT
-&test_tapdance   &kp A   &kp S         &kp D     &kp F     &kp G                          &kp H    &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL   &kp Z   &kp X         &kp C     &kp V     &kp B                          &kp N    &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp LBKT
-&kp C_MUTE          &mo FUNCTION  &kp LGUI  &kp LALT  &kp SPACE  &kp ESC  &kp BSPC   &mo RET  &kp RALT  &kp HOME   &kp END
+&kp GRAVE                &kp N1  &kp N2        &kp N3    &kp N4    &kp N5                         &kp N6   &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB                  &kp Q   &kp W         &kp E     &kp R     &kp T                          &kp Y    &kp U     &kp I      &kp O    &kp P     &kp RBKT
+&holdtap LSHFT LSHFT  &kp A   &kp S         &kp D     &kp F     &kp G                          &kp H    &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL                &kp Z   &kp X         &kp C     &kp V     &kp B                          &kp N    &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp LBKT
+&kp C_MUTE                       &mo FUNCTION  &kp LGUI  &kp LALT  &kp SPACE  &kp ESC  &kp BSPC   &mo RET  &kp RALT  &kp HOME   &kp END
 
 &mkp LCLK  &kp RIGHT  &kp UP     &kp LEFT  &kp DOWN
             >;
