@@ -78,13 +78,13 @@
             //               | **  | WIN  | ALT   | SPACE | ESC |||| BKSPC | ENTER | ALTGR | 0  | .   |
 
             bindings = <
-&kp F1          &kp F2       &kp F3       &kp F4      &kp F5       &kp F6                  &kp F7        &kp F8     &kp F9  &kp F10 &kp F11  &kp F12
-&studio_unlock  &none        &none        &none       &none        &none                   &kp C_MUTE    &kp PRCNT  &kp N7  &kp N8  &kp N9   &kp EQUAL
-&studio_unlock  &none        &none        &none       &none        &none                   &kp C_VOL_UP  &kp ASTRK  &kp N4  &kp N5  &kp N6   &kp PLUS
-&studio_unlock  &none        &kp K_CUT    &kp K_COPY  &kp K_PASTE  &none                   &kp C_VOL_DN  &kp SLASH  &kp N1  &kp N2  &kp N3   &kp MINUS
-&kp C_MUTE                   &mo DEFAULT  &trans      &trans       &trans  &trans  &trans  &trans        &trans     &kp N0  &kp END
+&kp F1          &kp F2       &kp F3       &kp F4      &kp F5       &kp F6                  &kp F7        &kp F8     &kp F9     &kp F10    &kp F11     &kp F12
+&studio_unlock  &none        &none        &none       &none        &none                   &kp C_MUTE    &kp PRCNT  &kp KP_N7  &kp KP_N8  &kp KP_N9   &kp EQUAL
+&studio_unlock  &none        &none        &none       &none        &none                   &kp C_VOL_UP  &kp ASTRK  &kp KP_N4  &kp KP_N5  &kp KP_N6   &kp PLUS
+&studio_unlock  &none        &kp K_CUT    &kp K_COPY  &kp K_PASTE  &none                   &kp C_VOL_DN  &kp SLASH  &kp KP_N1  &kp KP_N2  &kp KP_N3   &kp MINUS
+&kp C_MUTE                   &mo DEFAULT  &trans      &trans       &trans  &trans  &trans  &trans        &trans     &kp N0     &kp KP_DOT
 
-&kp A      &kp B     &kp C      &kp D      &kp E
+&mkp LCLK  &kp RIGHT  &kp UP     &kp LEFT  &kp DOWN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
