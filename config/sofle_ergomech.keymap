@@ -63,8 +63,8 @@
 &mkp LCLK  &kp RIGHT  &kp UP     &kp LEFT  &kp DOWN
             >;
 
-            // sensor-bindings = <&mousescroll &inc_dec_kp PG_UP PG_DN>;
-            sensor-bindings = <&msc SCRL_UP SCRL_DOWN &msc SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mousescroll &inc_dec_kp PG_UP PG_DN>;
+            // sensor-bindings = <&msc SCRL_UP SCRL_DOWN &msc SCRL_UP SCRL_DOWN>;
         };
 
         function_layer {
