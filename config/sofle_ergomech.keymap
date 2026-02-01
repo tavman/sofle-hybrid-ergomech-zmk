@@ -12,7 +12,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define DEFAULT    0
-#define FUNCTION   1
+#define FN         1
 #define QWERTY     2
 #define AZERTY     3
 #define AZERTY_MAJ 4
@@ -32,7 +32,7 @@
 			tap-ms = <20>;
         };
 
-        holdtap: sh_holdtap {
+        ht: sh_ht {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
@@ -46,19 +46,24 @@
 
         default_layer {
             label = "Base";
-
-            // -- DEFAULT ---------------------------------++++---------------------------------------------
-            // | $    | " | «    | »   | (   | )     |     ||||       | @     | +     | -    | /   | * | = |
-            // | TAB  | b | é    | p   | o   | è     |     ||||       | ^     | v     | d    | l   | j | w |
-            // | MAJ  | a | u    | i   | e   | ,     |     ||||       | c     | t     | s    | r   | n | m |
-            // | CTRL | à | y    | x   | .   | k     |     ||||       | '     | q     | g    | h   | f | z |
-            //            | <FN> | WIN | ALT | SPACE | ESC |||| BKSPC | ENTER | ALTGR | HOME | END |
-            bindings = <
-&kp GRAVE             &kp N1  &kp N2                      &kp N3    &kp N4    &kp N5                         &kp N6   &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB               &kp Q   &kp W                       &kp E     &kp R     &kp T                          &kp Y    &kp U     &kp I      &kp O    &kp P     &kp RBKT
-&holdtap LSHFT LSHFT  &kp A   &kp S                       &kp D     &kp F     &kp G                          &kp H    &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL             &kp Z   &kp X                       &kp C     &kp V     &kp B                          &kp N    &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp LBKT
-&kp C_MUTE                    &holdtap FUNCTION FUNCTION  &kp LGUI  &kp LALT  &kp SPACE  &kp ESC  &kp BSPC   &mo RET  &kp RALT  &kp HOME   &kp END
+			// -- DEFAULT ------------------------------------------------------------------------------------
+			bindings = <
+// ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮                                      ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
+// │ $              │ "              │ «              │ »              │ (              │ )              │                                      │ @              │ +              │ -              │ /              │ *              │ =              │
+     &kp GRAVE        &kp N1           &kp N2           &kp N3           &kp N4           &kp N5                                                  &kp N6           &kp N7           &kp N8            &kp N9          &kp N0           &kp MINUS
+// ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤                                      ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
+// │ TAB            │ b              │ é              │ p              │ o              │ è              │                                      │ ^              │ v              │ d              │ l              │ j              │ w              │
+     &kp TAB          &kp Q            &kp W            &kp E            &kp R            &kp T                                                   &kp Y            &kp U            &kp I            &kp O            &kp P            &kp RBKT
+// ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤                                      ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
+// │ MAJ            │ a              │ u              │ i              │ e              │ ,              │                                      │ c              │ t              │ s              │ r              │ n              │ m              │
+     &ht LSHFT LSHFT  &kp A            &kp S            &kp D            &kp F            &kp G                                                   &kp H            &kp J            &kp K            &kp L            &kp SEMI         &kp SQT
+// ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤                                      ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
+// │ CTRL           │ à              │ y              │ x              │ .              │ k              │                                      │ '              │ q              │ g              │ h              │ f              │ z              │
+     &kp LCTRL        &kp Z            &kp X            &kp C            &kp V            &kp B                                                   &kp N            &kp M            &kp COMMA        &kp DOT          &kp FSLH         &kp LBKT
+// ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
+//                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
+     &kp C_MUTE                        &ht FN FN        &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
+//                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 
 &mkp LCLK  &kp RIGHT  &kp UP     &kp LEFT  &kp DOWN
             >;
@@ -68,7 +73,7 @@
             // sensor-bindings = <&msc SCRL_UP SCRL_DOWN &msc SCRL_UP SCRL_DOWN>;
         };
 
-        function_layer {
+        fn_layer {
             label = "Function";
 
             // -- FN -------------------------------------------------------++++----------------------------------------
