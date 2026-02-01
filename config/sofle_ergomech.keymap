@@ -39,6 +39,25 @@
 			tapping-term-ms = <200>;
 			bindings = <&kp>, <&kt>;
         };
+		
+		
+/* macro qui enchaîne plusieurs comportements */
+macro_send_ctrl_tab: macro_send_ctrl_tab {
+	compatible = "zmk,behavior-macro";
+	#binding-cells = <0>;
+	bindings = <&kp LCTRL>, <&kp TAB>;
+};
+
+/* hold-tap qui agit comme mod‑tap et déclenche une macro */
+left_shift_tap: left_shift_tap {
+	compatible = "zmk,behavior-hold-tap";
+	#binding-cells = <2>;
+	flavor = "balanced";
+	bindings = <&macro_send_ctrl_tab>, <&kp LEFT_SHIFT>;
+};
+
+
+
     };
 
     keymap {
