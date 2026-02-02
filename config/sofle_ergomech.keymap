@@ -47,8 +47,6 @@
 			bindings = <&kp M>, <&kp BSLH>;
 		};
 		
-		
-		
 		am_right: am_right {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -98,7 +96,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
      &mkp MB1                          &ht FN FN        &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB2 &am_right &am_up &am_left &am_down
+&mkp MB1 &am_right &kp UP &kp LEFT &kp DOWN
 			>;
 			sensor-bindings = <&mousescroll &mousescroll>;
 		};
@@ -123,7 +121,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
      &kp C_MUTE                        &mo DEFAULT      &trans           &trans           &trans           &trans                &trans           &trans           &trans           &kp N0           &kp KP_DOT
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB2 &mmv MOVE_RIGHT &mmv MOVE_UP &mmv MOVE_LEFT &mmv MOVE_DOWN
+&mkp MB2 &am_right &am_up &am_left &am_down
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
