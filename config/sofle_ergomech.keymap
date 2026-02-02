@@ -46,6 +46,35 @@
 			tapping-term-ms = <200>;
 			bindings = <&kp M>, <&kp BSLH>;
 		};
+		
+		am_right: am_right {
+			compatible = "zmk,behavior-mod-mouse";
+			#binding-cells = <0>;
+			modifiers = <&kp LALT>;
+			mouse-bindings = <&msc SCRL_RIGHT>;
+			fallback-bindings = <&mmv MOVE_RIGHT>;
+		};
+		am_left: am_left {
+			compatible = "zmk,behavior-mod-mouse";
+			#binding-cells = <0>;
+			modifiers = <&kp LALT>;
+			mouse-bindings = <&msc SCRL_LEFT>;
+			fallback-bindings = <&mmv MOVE_LEFT>;
+		};
+		am_up: am_up {
+			compatible = "zmk,behavior-mod-mouse";
+			#binding-cells = <0>;
+			modifiers = <&kp LALT>;
+			mouse-bindings = <&msc SCRL_UP>;
+			fallback-bindings = <&mmv MOVE_UP>;
+		};
+		am_down: am_down {
+			compatible = "zmk,behavior-mod-mouse";
+			#binding-cells = <0>;
+			modifiers = <&kp LALT>;
+			mouse-bindings = <&msc SCRL_DOWN>;
+			fallback-bindings = <&mmv MOVE_DOWN>;
+		};
 	};
 
     keymap {
