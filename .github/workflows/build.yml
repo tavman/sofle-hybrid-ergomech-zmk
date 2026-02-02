@@ -29,7 +29,7 @@ jobs:
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Create Release with firmware
-        uses: softprops/action-gh-release@master
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
           name: Firmware ${{ steps.date.outputs.date }} - master
@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download firmware artifacts
-        uses: actions/download-artifact@main
+        uses: actions/download-artifact@v4
         with:
           name: firmware
 
@@ -51,7 +51,7 @@ jobs:
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Create Release with firmware
-        uses: softprops/action-gh-release@main
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
           name: Firmware ${{ steps.date.outputs.date }} - rev5
