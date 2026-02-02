@@ -96,7 +96,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
      &kp C_MUTE                        &mo DEFAULT      &trans           &trans           &trans           &trans                &trans           &trans           &trans           &kp N0           &kp KP_DOT
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB1 &kp RIGHT &kp UP &kp LEFT &kp DOWN
+&mkp MB1 &mmv MOVE_RIGHT &mmv MOVE_UP &mmv MOVE_LEFT &mmv MOVE_DOWN
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
