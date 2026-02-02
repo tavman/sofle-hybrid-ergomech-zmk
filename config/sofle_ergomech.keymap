@@ -105,7 +105,7 @@
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp RIGHT &kp UP &kp LEFT &kp DOWN
 			>;
-			sensor-bindings = <&msc SCRL_DOWN &msc SCRL_UP>;
+			sensor-bindings = <&mousescroll &mousescroll>;
 		};
 		
 		fn_layer {
