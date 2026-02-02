@@ -54,19 +54,19 @@
 			mouse-bindings = <&msc SCRL_RIGHT>;
 			fallback-bindings = <&mmv MOVE_RIGHT>;
 		};
-		am_left: am_left {
-			compatible = "zmk,behavior-mod-mouse";
-			#binding-cells = <0>;
-			modifiers = <&kp LALT>;
-			mouse-bindings = <&msc SCRL_LEFT>;
-			fallback-bindings = <&mmv MOVE_LEFT>;
-		};
 		am_up: am_up {
 			compatible = "zmk,behavior-mod-mouse";
 			#binding-cells = <0>;
 			modifiers = <&kp LALT>;
 			mouse-bindings = <&msc SCRL_UP>;
 			fallback-bindings = <&mmv MOVE_UP>;
+		};
+		am_left: am_left {
+			compatible = "zmk,behavior-mod-mouse";
+			#binding-cells = <0>;
+			modifiers = <&kp LALT>;
+			mouse-bindings = <&msc SCRL_LEFT>;
+			fallback-bindings = <&mmv MOVE_LEFT>;
 		};
 		am_down: am_down {
 			compatible = "zmk,behavior-mod-mouse";
@@ -100,7 +100,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
      &mkp MB2                          &ht FN FN        &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB1 &kp RIGHT &kp UP &kp LEFT &kp DOWN
+&mkp MB1 &am_right &am_up &am_left &am_down
 			>;
 			sensor-bindings = <&mousescroll &mousescroll>;
 		};
