@@ -56,7 +56,7 @@ htd_kp_space_ctrl: htd_kp_space_ctrl {
 	tapping-term-ms = <200>;
 	quick-tap-ms = <200>;
 	bindings = <&kp>, <&td_space_ctrl>;
-	hold-trigger-key-positions = <KB_THUMBS KB_RIGHT>;
+	hold-trigger-key-positions = <KB_THUMBS>;
 	retro-tap;
 };
 
