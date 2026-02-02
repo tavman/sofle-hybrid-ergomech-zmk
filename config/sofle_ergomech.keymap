@@ -47,6 +47,37 @@
 			bindings = <&kp M>, <&kp BSLH>;
 		};
 		
+		
+		
+		am_right: am_right {
+			compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&mkp MOVE_RIGHT>;
+            mods = <MOD_LALT>;
+		};
+		/*
+		alt_morph_left: alt_morph_left {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			modifiers = <&kp LALT>;
+			bind-when-mod = <&msc SCRL_LEFT>;
+			bind-otherwise = <&mkp MOVE_LEFT>;
+		};
+		alt_morph_up: alt_morph_up {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			modifiers = <&kp LALT>;
+			bind-when-mod = <&msc SCRL_UP>;
+			bind-otherwise = <&mkp MOVE_UP>;
+		};
+		alt_morph_down: alt_morph_down {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			modifiers = <&kp LALT>;
+			bind-when-mod = <&msc SCRL_DOWN>;
+			bind-otherwise = <&mkp MOVE_DOWN>;
+		};
+
 		am_right: am_right {
 			compatible = "zmk,behavior-mod-mouse";
 			#binding-cells = <0>;
@@ -75,6 +106,7 @@
 			mouse-bindings = <&msc SCRL_DOWN>;
 			fallback-bindings = <&mmv MOVE_DOWN>;
 		};
+		*/
 	};
 
     keymap {
@@ -100,7 +132,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
      &mkp MB2                          &ht FN FN        &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB1 &kp RIGHT &kp UP &kp LEFT &ht FN FN
+&mkp MB1 &am_right &kp UP &kp LEFT &kp DOWN
 			>;
 			sensor-bindings = <&mousescroll &mousescroll>;
 		};
