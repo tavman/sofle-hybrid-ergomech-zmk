@@ -52,61 +52,27 @@
 		am_right: am_right {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&msc SCRL_RIGHT>, <&mkp MOVE_RIGHT>;
+            bindings = <&mkp MOVE_RIGHT>, <&msc SCRL_RIGHT>;
             mods = <MOD_LALT>;
 		};
-		/*
-		alt_morph_left: alt_morph_left {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			modifiers = <&kp LALT>;
-			bind-when-mod = <&msc SCRL_LEFT>;
-			bind-otherwise = <&mkp MOVE_LEFT>;
-		};
-		alt_morph_up: alt_morph_up {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			modifiers = <&kp LALT>;
-			bind-when-mod = <&msc SCRL_UP>;
-			bind-otherwise = <&mkp MOVE_UP>;
-		};
-		alt_morph_down: alt_morph_down {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			modifiers = <&kp LALT>;
-			bind-when-mod = <&msc SCRL_DOWN>;
-			bind-otherwise = <&mkp MOVE_DOWN>;
-		};
-
-		am_right: am_right {
-			compatible = "zmk,behavior-mod-mouse";
-			#binding-cells = <0>;
-			modifiers = <&kp LALT>;
-			mouse-bindings = <&msc SCRL_RIGHT>;
-			fallback-bindings = <&mmv MOVE_RIGHT>;
-		};
 		am_up: am_up {
-			compatible = "zmk,behavior-mod-mouse";
-			#binding-cells = <0>;
-			modifiers = <&kp LALT>;
-			mouse-bindings = <&msc SCRL_UP>;
-			fallback-bindings = <&mmv MOVE_UP>;
+			compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mkp MOVE_UP>, <&msc SCRL_UP>;
+            mods = <MOD_LALT>;
 		};
 		am_left: am_left {
-			compatible = "zmk,behavior-mod-mouse";
-			#binding-cells = <0>;
-			modifiers = <&kp LALT>;
-			mouse-bindings = <&msc SCRL_LEFT>;
-			fallback-bindings = <&mmv MOVE_LEFT>;
+			compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mkp MOVE_LEFT>, <&msc SCRL_LEFT>;
+            mods = <MOD_LALT>;
 		};
 		am_down: am_down {
-			compatible = "zmk,behavior-mod-mouse";
-			#binding-cells = <0>;
-			modifiers = <&kp LALT>;
-			mouse-bindings = <&msc SCRL_DOWN>;
-			fallback-bindings = <&mmv MOVE_DOWN>;
+			compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mkp MOVE_DOWN>, <&msc SCRL_DOWN>;
+            mods = <MOD_LALT>;
 		};
-		*/
 	};
 
     keymap {
@@ -132,7 +98,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
      &mkp MB2                          &ht FN FN        &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB1 &am_right &kp UP &kp LEFT &kp DOWN
+&mkp MB1 &am_right &am_up &am_left &am_down
 			>;
 			sensor-bindings = <&mousescroll &mousescroll>;
 		};
