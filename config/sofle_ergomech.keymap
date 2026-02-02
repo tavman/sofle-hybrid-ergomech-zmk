@@ -96,7 +96,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
      &mkp MB1                          &ht FN FN        &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB2 &am_right &kp UP &kp LEFT &kp DOWN
+&mkp MB2 &kp RIGHT &kp UP &kp LEFT &kp DOWN
 			>;
 			sensor-bindings = <&mousescroll &mousescroll>;
 		};
