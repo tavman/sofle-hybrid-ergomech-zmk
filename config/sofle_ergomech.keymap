@@ -94,9 +94,9 @@ htd_kp_space_ctrl: htd_kp_space_ctrl {
      &kp LCTRL        &kp Z            &kp X            &kp C            &kp V            &kp B                                                   &kp N            &td_q            &kp COMMA        &kp DOT          &kp FSLH         &kp LBKT
 // ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
-     &kp C_MUTE                        &ht FN FN        &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
+     &mkp MB2                          &ht FN FN        &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp LCLK  &kp RIGHT  &kp UP     &kp LEFT  &kp DOWN
+&mkp MB1 &kp RIGHT &kp UP &kp LEFT &kp DOWN
 			>;
 			sensor-bindings = <&mousescroll &mousescroll>;
 		};
@@ -115,13 +115,13 @@ htd_kp_space_ctrl: htd_kp_space_ctrl {
 // │ studio         │                │                │                │                │                │                                      │ Vol+           │ *              │ 4              │ 5              │ 6              │ +              │
      &studio_unlock   &none            &none            &none            &none            &none                                                   &kp C_VOL_UP     &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5        &kp KP_N6        &kp KP_PLUS
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤                                      ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-// │ studio         │                │ CUT            │ COPY           │ PASTE          │                │                                      │ Vol-           │ /              │ 1              │ 2              │ 3              │ -              │
-     &studio_unlock   &none            &kp K_CUT        &kp K_COPY       &kp K_PASTE      &none                                                   &kp C_VOL_DN     &kp KP_SLASH     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_MINUS
+// │ BLUETOOTH      │                │ CUT            │ COPY           │ PASTE          │                │                                      │ Vol-           │ /              │ 1              │ 2              │ 3              │ -              │
+     &bt BT_CLR       &none            &kp K_CUT        &kp K_COPY       &kp K_PASTE      &none                                                   &kp C_VOL_DN     &kp KP_SLASH     &kp KP_N1        &kp KP_N2        &kp KP_N3        &kp KP_MINUS
 // ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
      &kp C_MUTE                        &mo DEFAULT      &trans           &trans           &trans           &trans                &trans           &trans           &trans           &kp N0           &kp KP_DOT
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp LCLK &kp RIGHT &kp UP &kp LEFT &kp DOWN
+&mkp MB1 &kp RIGHT &kp UP &kp LEFT &kp DOWN
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
