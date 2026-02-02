@@ -105,7 +105,7 @@
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp RIGHT &kp UP &kp LEFT &kp DOWN
 			>;
-			sensor-bindings = <&mousescroll &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&mousescroll>;
 		};
 		
 		fn_layer {
