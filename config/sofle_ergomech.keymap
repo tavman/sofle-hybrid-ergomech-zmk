@@ -31,8 +31,8 @@
 			bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 			tap-ms = <20>;
 		};
-
-		ht: sh_ht {
+		
+		ht: hold_tap_shift {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
@@ -40,6 +40,13 @@
 			bindings = <&kp>, <&kt>;
 		};
 		
+		ht_l: hold_tap_layer {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "hold-preferred";
+			tapping-term-ms = <200>;
+			bindings = <&mo>, <&to>;
+		};
 		td_q: td_q {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
@@ -94,7 +101,7 @@
      &kp LCTRL        &kp Z            &kp X            &kp C            &kp V            &kp B                                                   &kp N            &td_q            &kp COMMA        &kp DOT          &kp FSLH         &kp LBKT
 // ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
-     &mkp MB1                          &ht FN FN        &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
+     &mkp MB1                          &ht_l FN FN      &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp RIGHT &kp UP &kp LEFT &kp DOWN
 			>;
