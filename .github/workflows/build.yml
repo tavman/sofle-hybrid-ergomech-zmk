@@ -29,7 +29,7 @@ jobs:
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Create Release with firmware
-        uses: softprops/action-gh-release@main
+        uses: softprops/action-gh-release@master
         with:
           tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
           name: Firmware ${{ steps.date.outputs.date }} - master
