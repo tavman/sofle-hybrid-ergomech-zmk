@@ -150,9 +150,8 @@
      &mkp MB1                          &ht_l FN FN      &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp_right &kp_up &kp_left &kp_down
-
 			>;
-			sensor-bindings = <&mousescroll &mousescroll>;
+			sensor-bindings = <&mouse_move_x_inc_dec &mouse_move_y_inc_dec &mouse_scroll_up_down>;
 		};
 		
 		fn_layer {
