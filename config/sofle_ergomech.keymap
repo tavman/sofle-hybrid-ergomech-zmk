@@ -151,7 +151,7 @@
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp_right &kp_up &kp_left &kp_down
 			>;
-			sensor-bindings = <&msc SCRL_UP &msc SCRL_DOWN>;
+			sensor-bindings = <&inc_dec_msc SCRL_UP SCRL_DOWN>;
 		};
 		
 		fn_layer {
