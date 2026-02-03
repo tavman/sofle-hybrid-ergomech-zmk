@@ -68,6 +68,36 @@
 			bindings = <&kp M>, <&kp BSLH>;
 		};
 		
+		// page
+		kp_right: kp_right {
+			compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp END>;
+            mods = <MOD_LALT>;
+		};
+		
+		kp_up: kp_up {
+			compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp UP>, <&kp PAGE_UP>;
+            mods = <MOD_LALT>;
+		};
+		
+		kp_left: kp_left {
+			compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp HOME>;
+            mods = <MOD_LALT>;
+		};
+		
+		kp_down: kpm_down {
+			compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
+            mods = <MOD_LALT>;
+		};
+		
+		// move
 		am_right: am_right {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -119,7 +149,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
      &mkp MB1                          &ht_l FN FN      &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB2 &kp RIGHT &kp UP &kp LEFT &kp DOWN
+&mkp MB2 &kp_right &kp_up &kp_left &kp_down
 			>;
 			sensor-bindings = <&mousescroll &mousescroll>;
 		};
