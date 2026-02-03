@@ -34,3 +34,4 @@ jobs:
           name: Firmware ${{ steps.date.outputs.date }} - master
           body: Build from commit ${{ github.sha }}
           files: '*.uf2, *.bin'
+
