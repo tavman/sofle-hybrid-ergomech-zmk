@@ -3,6 +3,9 @@
  *
  * SPDX-License-Identifier: MIT
  */
+
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 300
+
 #include <behaviors.dtsi>
 #include <behaviors/mouse_move.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -39,9 +42,9 @@
 
 	behaviors {
 		mousescroll: mousescroll {
-			compatible = "zmk,behavior-sensor-rotate";
-			#sensor-binding-cells = <0>;
-			bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 			tap-ms = <20>;
 		};
 		
@@ -151,7 +154,7 @@
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp_right &kp_up &kp_left &kp_down
 			>;
-			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN &inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+			sensor-bindings = <&mousescroll &inc_dec_kp PG_UP PG_DN>;
 		};
 		
 		fn_layer {
