@@ -129,6 +129,29 @@
 	
     keymap {
 		compatible = "zmk,keymap";
+		
+		behaviors {
+            /* Boutons de souris classiques */
+            mouse_left_click  { compatible = "zmk,behavior-mouse-button"; label = "mouse_lclick"; button = BUTTON_LEFT; };
+            mouse_right_click { compatible = "zmk,behavior-mouse-button"; label = "mouse_rclick"; button = BUTTON_RIGHT; };
+
+            /* Déplacements du curseur – incrément / décrément sur chaque axe */
+            mouse_move_x_inc_dec {
+                compatible = "zmk,behavior-mouse-move-x-inc-dec";
+                label = "mouse_move_x_inc_dec";
+            };
+            mouse_move_y_inc_dec {
+                compatible = "zmk,behavior-mouse-move-y-inc-dec";
+                label = "mouse_move_y_inc_dec";
+            };
+
+            /* Scroll vertical (haut / bas) */
+            mouse_scroll_up_down {
+                compatible = "zmk,behavior-mouse-scroll-up-down";
+                label = "mouse_scroll_up_down";
+            };
+        };
+		
 		default_layer {
 			label = "Base";
 // ── DEFAULT ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
