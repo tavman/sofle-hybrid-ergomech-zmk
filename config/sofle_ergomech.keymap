@@ -119,7 +119,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
      &mkp MB1                          &ht_l FN FN      &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB2 &kp RIGHT &am_up &am_left &am_down
+&mkp MB2 &kp RIGHT &kp UP &kp LEFT &kp DOWN
 			>;
 			sensor-bindings = <&mousescroll &mousescroll>;
 		};
@@ -144,7 +144,7 @@
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
      &kp C_MUTE                        &to DEFAULT      &trans           &trans           &trans           &trans                &trans           &trans           &trans           &kp LS(N0)       &kp DOT
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB2 &am_right &mmv MOVE_UP &mmv MOVE_LEFT &mmv MOVE_DOWN
+&mkp MB2 &am_right &am_up &am_left &am_down
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
