@@ -14,7 +14,7 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 
-  create_release_master:
+  create_release_rev5:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -31,7 +31,6 @@ jobs:
         uses: softprops/action-gh-release@master
         with:
           tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
-          name: Firmware ${{ steps.date.outputs.date }} - master
+          name: Firmware ${{ steps.date.outputs.date }} - rev5
           body: Build from commit ${{ github.sha }}
           files: '*.uf2, *.bin'
-
