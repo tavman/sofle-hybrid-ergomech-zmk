@@ -4,9 +4,17 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/pointing.h>
 #include <behaviors.dtsi>
-#include <behaviors/mouse_keypad.dtsi>
+
+#include <behaviors/mouse_key_press.dtsi>
+#include <behaviors/mouse_keys.dtsi>
+#include <behaviors/mouse_move.dtsi>
+#include <behaviors/mouse_scroll.dtsi>
+
+
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/mouse.h>
+
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
