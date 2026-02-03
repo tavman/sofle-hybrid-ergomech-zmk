@@ -103,7 +103,6 @@
             #binding-cells = <0>;
             bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_RIGHT>;
             mods = <(MOD_LALT)>;
-			tap-ms = <20>;
 		};
 		
 		am_up: am_up {
@@ -111,7 +110,6 @@
             #binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&kp K_SCROLL_DOWN>;
             mods = <(MOD_LALT)>;
-			tap-ms = <20>;
 		};
 		
 		am_left: am_left {
@@ -119,7 +117,6 @@
             #binding-cells = <0>;
             bindings = <&mmv MOVE_LEFT>, <&msc SCRL_LEFT>;
             mods = <(MOD_LALT)>;
-			tap-ms = <20>;
 		};
 		
 		am_down: am_down {
@@ -127,7 +124,6 @@
             #binding-cells = <0>;
             bindings = <&mmv MOVE_DOWN>, <&kp K_SCROLL_DOWN>;
             mods = <(MOD_LALT)>;
-			tap-ms = <20>;
 		};
 	};
 	
