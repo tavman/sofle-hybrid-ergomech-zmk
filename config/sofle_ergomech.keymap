@@ -73,28 +73,28 @@
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RIGHT>, <&kp END>;
-            mods = <(MOD_LALT)>;
+            mods = <MOD_LALT>;
 		};
 		
 		kp_up: kp_up {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp UP>, <&kp PAGE_UP>;
-            mods = <(MOD_LALT)>;
+            mods = <MOD_LALT>;
 		};
 		
 		kp_left: kp_left {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LEFT>, <&kp HOME>;
-            mods = <(MOD_LALT)>;
+            mods = <MOD_LALT>;
 		};
 		
 		kp_down: kp_down {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
-            mods = <(MOD_LALT)>;
+            mods = <MOD_LALT>;
 		};
 		
 		// move
@@ -102,28 +102,28 @@
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_RIGHT>;
-            mods = <(MOD_LALT)>;
+            mods = <MOD_LALT>;
 		};
 		
 		am_up: am_up {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&kp K_SCROLL_DOWN>;
-            mods = <(MOD_LALT)>;
+            mods = <MOD_LALT>;
 		};
 		
 		am_left: am_left {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_LEFT>, <&msc SCRL_LEFT>;
-            mods = <(MOD_LALT)>;
+            mods = <MOD_LALT>;
 		};
 		
 		am_down: am_down {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&mmv MOVE_DOWN>, <&kp K_SCROLL_DOWN>;
-            mods = <(MOD_LALT)>;
+            mods = <MOD_LALT>;
 		};
 	};
 	
