@@ -60,7 +60,7 @@
 		mousescroll: mousescroll {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&scroll5 SCRL_UP>, <&scroll5 SCRL_DOWN>;
+            bindings = <&scrollup>, <&scrolldown>;
 			tap-ms = <20>;
 		};
 		
@@ -135,7 +135,7 @@
 		am_up: am_up {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_UP>, <&speedscroll SCRL_UP>;
+            bindings = <&mmv MOVE_UP>, <&scrollup>;
             mods = <MOD_LSFT>;
 		};
 		
@@ -149,7 +149,7 @@
 		am_down: am_down {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_DOWN>, <&speedscroll SCRL_DOWN>;
+            bindings = <&mmv MOVE_DOWN>, <&scrolldown>;
             mods = <MOD_LSFT>;
 		};
 	};
