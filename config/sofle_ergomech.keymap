@@ -102,7 +102,7 @@
             #binding-cells = <1>;
             bindings = <&macro_param_1to1>, <&msc MACRO_PLACEHOLDER>;
 			wait-ms = <20>;
-		}
+		};
 		
 		am_right: am_right {
 			compatible = "zmk,behavior-mod-morph";
