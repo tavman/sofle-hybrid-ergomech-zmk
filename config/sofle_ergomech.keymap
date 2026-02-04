@@ -41,12 +41,12 @@
 		scrollup: scrollup {
 			compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =	<&msc SCRL_UP>, <&msc SCRL_UP>, <&msc SCRL_UP>, <&msc SCRL_UP>;
+            bindings =	<&msc SCRL_UP>, <&msc SCRL_UP>, <&msc SCRL_UP>, <&msc SCRL_UP>, <&msc SCRL_UP>, <&msc SCRL_UP>;
 		};
 		scrolldown: scrolldown {
 			compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =	<&msc SCRL_DOWN>, <&msc SCRL_DOWN>, <&msc SCRL_DOWN>, <&msc SCRL_DOWN>;
+            bindings =	<&msc SCRL_DOWN>, <&msc SCRL_DOWN>, <&msc SCRL_DOWN>, <&msc SCRL_DOWN>, <&msc SCRL_DOWN>, <&msc SCRL_DOWN>;
 		};
 		
 		mousescroll: mousescroll {
