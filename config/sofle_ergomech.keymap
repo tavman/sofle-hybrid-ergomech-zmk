@@ -101,7 +101,7 @@
 			compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>; // Must be 1
             bindings = <&macro_param_1to1> <&msc MACRO_PLACEHOLDER>;
-			wait-ms = <20>
+			wait-ms = <20>;
 		}
 		
 		am_right: am_right {
