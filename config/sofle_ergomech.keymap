@@ -42,7 +42,8 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-			tap-ms = <20>;		};
+			tap-ms = <5>;
+		};
 		
 		shift: hold_tap_shift {
 			compatible = "zmk,behavior-hold-tap";
@@ -72,68 +73,65 @@
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RIGHT>, <&kp END>;
-            mods = <MOD_LALT>;
+            mods = <MOD_LCTL>;
 		};
 		
 		kp_up: kp_up {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp UP>, <&kp PAGE_UP>;
-            mods = <MOD_LALT>;
+            mods = <MOD_LCTL>;
 		};
 		
 		kp_left: kp_left {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LEFT>, <&kp HOME>;
-            mods = <MOD_LALT>;
+            mods = <MOD_LCTL>;
 		};
 		
 		kp_down: kp_down {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
-            mods = <MOD_LALT>;
+            mods = <MOD_LCTL>;
 		};
 		
 		// FN JOYSTICK
 		speedscroll: speedscroll {
 			compatible = "zmk,behavior-macro-one-param";
+			wait-ms = <0>;
+			tap-ms = <0>;
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1>, <&msc MACRO_PLACEHOLDER>;
-			wait-ms = <20>;
+            bindings = <&macro_param_1to1>, <&macro_press &msc MACRO_PLACEHOLDER>;
 		};
 		
 		am_right: am_right {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            // bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_RIGHT>;
             bindings = <&mmv MOVE_RIGHT>, <&speedscroll SCRL_RIGHT>;
-            mods = <MOD_LALT>;
+            mods = <MOD_LCTL>;
 		};
 		
 		am_up: am_up {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            // bindings = <&mmv MOVE_UP>, <&msc SCRL_UP>;
             bindings = <&mmv MOVE_UP>, <&speedscroll SCRL_UP>;
-            mods = <MOD_LALT>;
+            mods = <MOD_LCTL>;
 		};
 		
 		am_left: am_left {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            // bindings = <&mmv MOVE_LEFT>, <&msc SCRL_LEFT>;
             bindings = <&mmv MOVE_LEFT>, <&speedscroll SCRL_LEFT>;
-            mods = <MOD_LALT>;
+            mods = <MOD_LCTL>;
 		};
 		
 		am_down: am_down {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            // bindings = <&mmv MOVE_DOWN>, <&msc SCRL_DOWN>;
             bindings = <&mmv MOVE_DOWN>, <&speedscroll SCRL_DOWN>;
-            mods = <MOD_LALT>;
+            mods = <MOD_LCTL>;
 		};
 	};
 	
