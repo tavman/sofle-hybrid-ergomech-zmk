@@ -130,7 +130,7 @@
      &kp LCTRL        &kp Z            &kp X            &kp C            &kp V            &kp B                                                   &kp N            &td_q            &kp COMMA        &kp DOT          &kp FSLH         &kp LBKT
 // ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
-     &kp C_MUTE                        &ht_l FN FN      &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
+     &kp C_MUTE                        &ht_l FN FN      &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &kp ENTER        &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp_right &kp_up &kp_left &kp_down
 			>;
