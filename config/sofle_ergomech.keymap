@@ -42,8 +42,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-			tap-ms = <20>;
-		};
+			tap-ms = <20>;		};
 		
 		shift: hold_tap_shift {
 			compatible = "zmk,behavior-hold-tap";
@@ -103,12 +102,13 @@
             #binding-cells = <0>;
             bindings = <&mmv MOVE_RIGHT>, <&msc SCRL_RIGHT>;
             mods = <MOD_LALT>;
+			repeat-interval-ms = <200>;
 		};
 		
 		am_up: am_up {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_UP>, <&kp K_SCROLL_UP>;
+            bindings = <&mmv MOVE_UP>, <&msc SCRL_UP>;
             mods = <MOD_LALT>;
 		};
 		
@@ -122,7 +122,7 @@
 		am_down: am_down {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_DOWN>, <&kp K_SCROLL_DOWN>;
+            bindings = <&mmv MOVE_DOWN>, <&msc SCRL_DOWN>;
             mods = <MOD_LALT>;
 		};
 	};
@@ -151,7 +151,7 @@
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp_right &kp_up &kp_left &kp_down
 			>;
-			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&mousescroll &inc_dec_kp PG_UP PG_DN>;
 		};
 		
 		fn_layer {
@@ -168,8 +168,8 @@
 // │ studio         │                │                │                │                │                │                                      │ Vol+           │ *              │ 4              │ 5              │ 6              │ +              │
      &studio_unlock   &none            &none            &none            &none            &none                                                   &kp C_VOL_UP     &kp KP_MULTIPLY  &kp LS(N4)       &kp LS(N5)       &kp LS(N6)       &kp KP_PLUS
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤                                      ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-// │ BLUETOOTH      │                │ CUT            │ COPY           │ PASTE          │                │                                      │ Vol-           │ /              │ 1              │ 2              │ 3              │ -              │
-     &bt BT_CLR       &none            &kp C_AC_CUT     &kp C_AC_COPY    &kp C_AC_PASTE   &none                                                   &kp C_VOL_DN     &kp KP_SLASH     &kp LS(N1)       &kp LS(N2)       &kp LS(N3)       &kp KP_MINUS
+// │ BLUETOOTH      │ CUT            │ COPY           │ PASTE          │                │                │                                      │ Vol-           │ /              │ 1              │ 2              │ 3              │ -              │
+     &bt BT_CLR       &kp LC(X)        &kp LC(C)        &kp LC(V)        &none            &none                                                   &kp C_VOL_DN     &kp KP_SLASH     &kp LS(N1)       &kp LS(N2)       &kp LS(N3)       &kp KP_MINUS
 // ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
      &kp MB1                           &to DEFAULT      &trans           &trans           &trans           &trans                &trans           &trans           &trans           &kp LS(N0)       &kp DOT
