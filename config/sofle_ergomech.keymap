@@ -42,7 +42,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-			tap-ms = <5>;
+			tap-ms = <20>;
 		};
 		
 		shift: hold_tap_shift {
@@ -179,8 +179,8 @@
 // │ BLUETOOTH      │ CUT            │ COPY           │ PASTE          │                │                │                                      │ Vol-           │ /              │ 1              │ 2              │ 3              │ -              │
      &bt BT_CLR       &kp LC(X)        &kp LC(C)        &kp LC(V)        &none            &none                                                   &kp C_VOL_DN     &kp KP_SLASH     &kp LS(N1)       &kp LS(N2)       &kp LS(N3)       &kp KP_MINUS
 // ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
-//                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
-     &kp MB1                           &to DEFAULT      &trans           &trans           &trans           &trans                &trans           &trans           &trans           &kp LS(N0)       &kp DOT
+//                                   │ <FN>           │ WIN            │ CTRL           │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
+     &kp MB1                           &to DEFAULT      &trans           &kp LCTRL        &trans           &trans                &trans           &trans           &trans           &kp LS(N0)       &kp DOT
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &am_right &am_up &am_left &am_down
 			>;
