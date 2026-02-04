@@ -41,19 +41,19 @@
 		scrollup: scrollup {
 			compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =	<&msc SCRL_UP>, <&macro_wait_time 5>,
-						<&msc SCRL_UP>, <&macro_wait_time 5>,
-						<&msc SCRL_UP>, <&macro_wait_time 5>,
-						<&msc SCRL_UP>, <&macro_wait_time 5>,
+            bindings =	<&msc SCRL_UP>, <&macro_wait_time 10>,
+						<&msc SCRL_UP>, <&macro_wait_time 10>,
+						<&msc SCRL_UP>, <&macro_wait_time 10>,
+						<&msc SCRL_UP>, <&macro_wait_time 10>,
 						<&msc SCRL_UP>;
 		};
 		scrolldown: scrolldown {
 			compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =	<&msc SCRL_DOWN>, <&macro_wait_time 5>,
-						<&msc SCRL_DOWN>, <&macro_wait_time 5>,
-						<&msc SCRL_DOWN>, <&macro_wait_time 5>,
-						<&msc SCRL_DOWN>, <&macro_wait_time 5>,
+            bindings =	<&msc SCRL_DOWN>, <&macro_wait_time 10>,
+						<&msc SCRL_DOWN>, <&macro_wait_time 10>,
+						<&msc SCRL_DOWN>, <&macro_wait_time 10>,
+						<&msc SCRL_DOWN>, <&macro_wait_time 10>,
 						<&msc SCRL_DOWN>;
 		};
 		
