@@ -41,19 +41,19 @@
 		scrollup: scrollup {
 			compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =	<&msc SCRL_UP>, <&macro_wait_time 1>,
-						<&msc SCRL_UP>, <&macro_wait_time 1>,
-						<&msc SCRL_UP>, <&macro_wait_time 1>,
-						<&msc SCRL_UP>, <&macro_wait_time 1>,
+            bindings =	<&msc SCRL_UP>, <&macro_wait_time 20>,
+						<&msc SCRL_UP>, <&macro_wait_time 20>,
+						<&msc SCRL_UP>, <&macro_wait_time 20>,
+						<&msc SCRL_UP>, <&macro_wait_time 20>,
 						<&msc SCRL_UP>;
 		};
 		scrolldown: scrolldown {
 			compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =	<&msc SCRL_DOWN>, <&macro_wait_time 1>,
-						<&msc SCRL_DOWN>, <&macro_wait_time 1>,
-						<&msc SCRL_DOWN>, <&macro_wait_time 1>,
-						<&msc SCRL_DOWN>, <&macro_wait_time 1>,
+            bindings =	<&msc SCRL_DOWN>, <&macro_wait_time 20>,
+						<&msc SCRL_DOWN>, <&macro_wait_time 20>,
+						<&msc SCRL_DOWN>, <&macro_wait_time 20>,
+						<&msc SCRL_DOWN>, <&macro_wait_time 20>,
 						<&msc SCRL_DOWN>;
 		};
 		
@@ -92,28 +92,28 @@
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RIGHT>, <&kp END>;
-            mods = <MOD_LSFT>;
+            mods = <MOD_LALT>;
 		};
 		
 		kp_up: kp_up {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp UP>, <&kp PAGE_UP>;
-            mods = <MOD_LSFT>;
+            mods = <MOD_LALT>;
 		};
 		
 		kp_left: kp_left {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LEFT>, <&kp HOME>;
-            mods = <MOD_LSFT>;
+            mods = <MOD_LALT>;
 		};
 		
 		kp_down: kp_down {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
-            mods = <MOD_LSFT>;
+            mods = <MOD_LALT>;
 		};
 		
 		/*
@@ -176,7 +176,7 @@
      &kp LCTRL        &kp Z            &kp X            &kp C            &kp V            &kp B                                                   &kp N            &td_q            &kp COMMA        &kp DOT          &kp FSLH         &kp LBKT
 // ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
 //                                   │ <FN>           │ WIN            │ ALT            │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ HOME           │ END            │
-     &mkp C_MUTE                       &ht_l FN FN      &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
+     &kp C_MUTE                        &ht_l FN FN      &kp LGUI         &kp LALT         &kp SPACE        &kp ESC               &kp BSPC         &mo RET          &kp RALT         &kp HOME         &kp END
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp_right &kp_up &kp_left &kp_down
 			>;
@@ -194,14 +194,14 @@
 // │ studio         │ QWERTY         │ AZERTY         │                │                │                │                                      │ MUTE           │ %              │ 7              │ 8              │ 9              │ =              │
      &studio_unlock   &mo QWERTY       &mo AZERTY       &none            &none            &none                                                   &kp C_MUTE       &kp N5           &kp LS(N7)       &kp LS(N8)       &kp LS(N9)       &kp KP_EQUAL
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤                                      ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-// │ BLUETOOTH      │                │                │                │                │                │                                      │ Vol+           │ *              │ 4              │ 5              │ 6              │ +              │
-     &bt BT_CLR       &none            &none            &none            &none            &none                                                   &kp C_VOL_UP     &kp KP_MULTIPLY  &kp LS(N4)       &kp LS(N5)       &kp LS(N6)       &kp KP_PLUS
+// │ studio         │                │                │                │                │                │                                      │ Vol+           │ *              │ 4              │ 5              │ 6              │ +              │
+     &studio_unlock   &none            &none            &none            &none            &none                                                   &kp C_VOL_UP     &kp KP_MULTIPLY  &kp LS(N4)       &kp LS(N5)       &kp LS(N6)       &kp KP_PLUS
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤                                      ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-// │ MAJ            │ CUT            │ COPY           │ PASTE          │                │                │                                      │ Vol-           │ /              │ 1              │ 2              │ 3              │ -              │
-     &kp LSHFT        &kp LC(X)        &kp LC(C)        &kp LC(V)        &none            &none                                                   &kp C_VOL_DN     &kp KP_SLASH     &kp LS(N1)       &kp LS(N2)       &kp LS(N3)       &kp KP_MINUS
+// │ BLUETOOTH      │ CUT            │ COPY           │ PASTE          │                │                │                                      │ Vol-           │ /              │ 1              │ 2              │ 3              │ -              │
+     &bt BT_CLR       &kp LC(X)        &kp LC(C)        &kp LC(V)        &none            &none                                                   &kp C_VOL_DN     &kp KP_SLASH     &kp LS(N1)       &kp LS(N2)       &kp LS(N3)       &kp KP_MINUS
 // ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
 //                                   │ <FN>           │ WIN            │ ALT            │ STAND_BY_1     │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
-     &kp MB1                           &to DEFAULT      &trans           &kp LALT         &mo STAND_BY_1   &trans                &trans           &trans           &trans           &kp LS(N0)       &kp DOT
+     &mkp MB1                          &to DEFAULT      &trans           &kp LALT         &mo STAND_BY_1   &trans                &trans           &trans           &trans           &kp LS(N0)       &kp DOT
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &mmv MOVE_RIGHT &mmv MOVE_UP &mmv MOVE_LEFT &mmv MOVE_DOWN
 			>;
@@ -303,7 +303,7 @@
 //                                   │                │                │                │                │                │    │                │                │                │                │                │
      &trans                            &trans           &trans           &trans           &trans           &trans                &trans           &trans           &trans           &trans           &trans
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
-&mkp MB2 &msc SCRL_RIGHT &scrollup &msc SCRL_LEFT &scrolldown
+&mkp MB2 &msc SCRL_RIGHT &msc SCRL_UP &msc SCRL_LEFT &msc SCRL_DOWN
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
