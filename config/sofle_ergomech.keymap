@@ -37,9 +37,6 @@
 #define STAND_BY_3  7
 
 / {
-	// Activate ADJUST layer by pressing raise and lower
-
-
 	behaviors {
 		mousescroll: mousescroll {
             compatible = "zmk,behavior-sensor-rotate";
@@ -71,7 +68,7 @@
 			bindings = <&kp M>, <&kp BSLH>;
 		};
 		
-		// page
+		// JOYSTICK
 		kp_right: kp_right {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -100,7 +97,7 @@
             mods = <MOD_LALT>;
 		};
 		
-		// move
+		// FN JOYSTICK
 		am_right: am_right {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -111,7 +108,7 @@
 		am_up: am_up {
 			compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mmv MOVE_UP>, <&kp K_SCROLL_DOWN>;
+            bindings = <&mmv MOVE_UP>, <&kp K_SCROLL_UP>;
             mods = <MOD_LALT>;
 		};
 		
@@ -154,7 +151,7 @@
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &kp_right &kp_up &kp_left &kp_down
 			>;
-			sensor-bindings = <&mousescroll &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN &inc_dec_kp PG_UP PG_DN>;
 		};
 		
 		fn_layer {
