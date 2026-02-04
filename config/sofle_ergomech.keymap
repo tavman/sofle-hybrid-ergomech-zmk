@@ -38,10 +38,22 @@
 
 / {
 	behaviors {
+		scroll5: scroll5 {
+			compatible = "zmk,behavior-macro-one-param";
+			wait-ms = <0>;
+			tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1>, <&msc MACRO_PLACEHOLDER>,
+						<&macro_param_1to1>, <&msc MACRO_PLACEHOLDER>,
+						<&macro_param_1to1>, <&msc MACRO_PLACEHOLDER>,
+						<&macro_param_1to1>, <&msc MACRO_PLACEHOLDER>,
+						<&macro_param_1to1>, <&msc MACRO_PLACEHOLDER>;
+		};
+		
 		mousescroll: mousescroll {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&scroll5 SCRL_UP>, <&scroll5 SCRL_DOWN>;
 			tap-ms = <20>;
 		};
 		
