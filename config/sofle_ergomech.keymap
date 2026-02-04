@@ -179,8 +179,8 @@
 // │ BLUETOOTH      │ CUT            │ COPY           │ PASTE          │                │                │                                      │ Vol-           │ /              │ 1              │ 2              │ 3              │ -              │
      &bt BT_CLR       &kp LC(X)        &kp LC(C)        &kp LC(V)        &none            &none                                                   &kp C_VOL_DN     &kp KP_SLASH     &kp LS(N1)       &kp LS(N2)       &kp LS(N3)       &kp KP_MINUS
 // ╰────────────────┴────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╮    ╭────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────╯
-//                                   │ <FN>           │ WIN            │ CTRL           │ SPACE          │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
-     &kp MB1                           &to DEFAULT      &trans           &kp LCTRL        &trans           &trans                &trans           &trans           &trans           &kp LS(N0)       &kp DOT
+//                                   │ <FN>           │ WIN            │ ALT            │ CTRL           │ ESC            │    │ BKSPC          │ ENTER          │ ALTGR          │ 0              │ .              │
+     &kp MB1                           &to DEFAULT      &trans           &kp LALT         &kp LCTRL        &trans                &trans           &trans           &trans           &kp LS(N0)       &kp DOT
 //                                   ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────┴────────────────┴────────────────╯
 &mkp MB2 &am_right &am_up &am_left &am_down
 			>;
