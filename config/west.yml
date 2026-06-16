@@ -7,9 +7,5 @@ manifest:
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
-    - name: zephyr
-      remote: zmkfirmware
-      revision: v3.5.0+zmk-fixes
-      clone-depth: 1
   self:
     path: config
